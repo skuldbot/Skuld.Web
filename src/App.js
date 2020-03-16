@@ -1,17 +1,12 @@
-import React from 'react';
-import Home from './pages/Home'
-import Commands from './pages/Commands'
-import Credit from './pages/Credits'
-import Legal from './pages/Legal'
-import Stats from './pages/Stats'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
-import './App.css';
-import Sidebar from './components/SideBar'
-import Footer from './components/Footer'
+import React from "react";
+import Home from "./pages/Home";
+import Commands from "./pages/Commands";
+import Credit from "./pages/Credits";
+import Legal from "./pages/Legal";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./App.css";
+import Sidebar from "./components/SideBar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -26,7 +21,6 @@ function App() {
             <Route path="/(credits)/" component={Credit} />
             <Route path="/(leaderboard)/" />
             <Route path="/(legal)/" component={Legal} />
-            <Route path="/(stats)/" component={Stats} />
           </Switch>
 
           <Footer />

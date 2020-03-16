@@ -1,102 +1,102 @@
 [
-    { 
-        "weight": 53,
-        "value":  "Bolster your server with a fun bot"
-    },
-    { 
-        "weight": 52,
-        "value":  "A discord bot that does some stuff I guess"
-    },
-    { 
-        "weight": 51,
-        "value":  "Another weeb bot because there isn't enough heccin' dag-nabbit"
-    },
-    { 
-        "weight": 50,
-        "value":  "Utilitarian? ✔ Fun? ✔ Shitposting approved? ✔"
-    },
-    { 
-        "weight": 49,
-        "value":  "ᐊᐃᓐᖓᐃ ᑐᙵᓱ"
-    },
-    { 
-        "weight": 19,
-        "value":  "stealing your data, one server at a time"
-    },
-    { 
-        "weight": 18,
-        "value":  ".... . .-.. .-.. --- --..-- ....... .- -- ....... ... - ..- -.-. -.- ....... .. -. ....... .. --. .-.. --- ---"
-    },
-    { 
-        "weight": 17,
-        "value":  "-- .- -.. .  .-- .. - ....  - . .-  .- -. -..  -.-. .-. ..- -- .--. . - ..."
-    },
-    { 
-        "weight": 16,
-        "value":  "Another discord bot because why not? ¯\\_(ツ)_/¯"
-    },
-    { 
-        "weight": 15,
-        "value":  "This bot does nothing new"
-    },
-    { 
-        "weight": 14,
-        "value":  "79 6f 75 74 75 2e 62 65 2f 4a 69 4c 59 71 4e 34 35 77 74 6f"
-    },
-    { 
-        "weight": 13,
-        "value":  "the bread will be okay"
-    },
-    { 
-        "weight": 12,
-        "value":  "this is so sad, play despacito 2 ft red pewdiepie"
-    },
-    { 
-        "weight": 11,
-        "value":  "Please tell father I am well. I have missed the ship by three days, but that does not matter. I am home. I am healthy."
-    },
-    { 
-        "weight": 10,
-        "value":  "Insert slogan here"
-    },
-    { 
-        "weight": 9, 
-        "value": "I forgot what to write here. Please help me."
-    },
-    { 
-        "weight": 8, 
-        "value": "ssh://cjohnson@GLaDOS:tier3"
-    },
-    { 
-        "weight": 7, 
-        "value": "Who are you? What year is this? How did you get here? Who am I?"
-    },
-    { 
-        "weight": 6, 
-        "value": "&lt;?=$slogan?&gt;"
-    },
-    { 
-        "weight": 5, 
-        "value": "{{slogan}}"
-    },
-    { 
-        "weight": 4, 
-        "value": "Discord loading lines suck, prove me wrong."
-    },
-    { 
-        "weight": 3, 
-        "value": "Now with 100% more OC"
-    },
-    { 
-        "weight": 2, 
-        "value": "Excuse me, is this discord bot gluten free?"
-    },
-    { 
-        "weight": 1, 
-        "value": "I use arch btw"
-    },
-    { 
-        "weight": 0, 
-        "value": "More bloat than systemd"
-    }
+  {
+    "weight": 53,
+    "value": "Bolster your server with a fun bot"
+  },
+  {
+    "weight": 52,
+    "value": "A discord bot that does some stuff I guess"
+  },
+  {
+    "weight": 51,
+    "value": "Another weeb bot because there isn't enough heccin' dag-nabbit"
+  },
+  {
+    "weight": 50,
+    "value": "Utilitarian? ✔ Fun? ✔ Shitposting approved? ✔"
+  },
+  {
+    "weight": 49,
+    "value": "ᐊᐃᓐᖓᐃ ᑐᙵᓱ"
+  },
+  {
+    "weight": 19,
+    "value": "stealing your data, one server at a time"
+  },
+  {
+    "weight": 18,
+    "value": ".... . .-.. .-.. --- --..-- ....... .- -- ....... ... - ..- -.-. -.- ....... .. -. ....... .. --. .-.. --- ---"
+  },
+  {
+    "weight": 17,
+    "value": "-- .- -.. .  .-- .. - ....  - . .-  .- -. -..  -.-. .-. ..- -- .--. . - ..."
+  },
+  {
+    "weight": 16,
+    "value": "Another discord bot because why not? ¯\\_(ツ)_/¯"
+  },
+  {
+    "weight": 15,
+    "value": "This bot does nothing new"
+  },
+  {
+    "weight": 14,
+    "value": "79 6f 75 74 75 2e 62 65 2f 4a 69 4c 59 71 4e 34 35 77 74 6f"
+  },
+  {
+    "weight": 13,
+    "value": "the bread will be okay"
+  },
+  {
+    "weight": 12,
+    "value": "this is so sad, play despacito 2 ft red pewdiepie"
+  },
+  {
+    "weight": 11,
+    "value": "Please tell father I am well. I have missed the ship by three days, but that does not matter. I am home. I am healthy."
+  },
+  {
+    "weight": 10,
+    "value": "Insert slogan here"
+  },
+  {
+    "weight": 9,
+    "value": "I forgot what to write here. Please help me."
+  },
+  {
+    "weight": 8,
+    "value": "ssh://cjohnson@GLaDOS:tier3"
+  },
+  {
+    "weight": 7,
+    "value": "Who are you? What year is this? How did you get here? Who am I?"
+  },
+  {
+    "weight": 6,
+    "value": "&lt;?=$slogan?&gt;"
+  },
+  {
+    "weight": 5,
+    "value": "{slogan}"
+  },
+  {
+    "weight": 4,
+    "value": "Discord loading lines suck, prove me wrong."
+  },
+  {
+    "weight": 3,
+    "value": "Now with 100% more OC"
+  },
+  {
+    "weight": 2,
+    "value": "Excuse me, is this discord bot gluten free?"
+  },
+  {
+    "weight": 1,
+    "value": "I use arch btw"
+  },
+  {
+    "weight": 1,
+    "value": "More bloat than systemd"
+  }
 ]

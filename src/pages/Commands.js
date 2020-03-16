@@ -1,84 +1,188 @@
-import React from 'react';
-import FuzzySearch from 'react-fuzzy'
-import cmds from "../data/commands"
-import ModuleTree from "../components/Commands/ModuleTree"
+import React from "react";
+import Fuse from "fuse.js";
+import cmds from "../data/commands";
+import CommandNode from "../components/Commands/CommandNode";
+import SearchFlavour from "../data/commandSearchFlavour";
 
-function getCommandNames()
-{
-    let names = [];
-    cmds.map((x, i) => {
-        return x.Commands.map((y, j) => {
-            let entry = { Name: y.Name };
-            if (names.filter(element => (element.Name == y.Name)).length <= 0)
-            {
-                names.push(entry);
-            }
-        })
-    });
-    return names;
+function shuffle(array) {
+  var currentIndex = array.length,
+    temporaryValue,
+    randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
 }
 
-function getCommandNamesAndModules()
-{
-    let names = [];
-    cmds.map((x, i) => {
-        return x.Commands.map((y, j) => {
-            let entry = { Command: y.Name, Module: x.Name };
-            if (names.filter(element => (element.Command == y.Name)).length <= 0)
-            {
-                names.push(entry);
-            }
-        })
+function getFlavour() {
+  shuffle(SearchFlavour);
+
+  var sumOfWeights = 0;
+
+  for (var entry in SearchFlavour) {
+    sumOfWeights += SearchFlavour[entry].weight;
+  }
+
+  var randomWeight = Math.floor(Math.random() * (sumOfWeights + 1));
+
+  for (var slogan in SearchFlavour) {
+    randomWeight -= SearchFlavour[slogan].weight;
+
+    if (randomWeight <= 0) return SearchFlavour[slogan].value;
+  }
+
+  return "";
+}
+
+function unHoist(doFirstHoist) {
+  if (doFirstHoist) {
+    var firstHoisted = document.getElementsByClassName("firstHoist");
+    if (firstHoisted.length > 0) {
+      Array.from(firstHoisted).forEach((val, index) => {
+        val.classList.remove("firstHoist");
+      });
+    }
+  }
+
+  var hoisted = document.getElementsByClassName("hoisted");
+  if (hoisted.length > 0) {
+    Array.from(hoisted).forEach((val, index) => {
+      val.classList.remove("hoisted");
+      if (!val.classList.contains("unhoisted")) {
+        val.classList.add("unhoisted");
+      }
+      if (val.classList.contains("firstHoist")) {
+        val.classList.remove("firstHoist");
+      }
     });
-    return names;
+  }
 }
 
 export default class Commands extends React.Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        cmds.sort((a, b) => {
-            let textA = a.Name.toUpperCase();
-            let textB = b.Name.toUpperCase();
+    cmds.sort((a, b) => {
+      let textA = a.Name.toUpperCase();
+      let textB = b.Name.toUpperCase();
 
-            return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
-        });
+      return textA < textB ? -1 : textA > textB ? 1 : 0;
+    });
 
-        let cmdNames = getCommandNames();
-        let cmdModules = getCommandNamesAndModules();
+    this.state = {
+      commands: [],
+      allcommandnames: []
+    };
+  }
 
-        this.state = { commandNames: cmdNames, commandNameModules: cmdModules }
+  componentDidMount() {
+    const commands = document.getElementById("commands");
 
-        console.log(this.state)
+    for (let i = 0; i < commands.childElementCount; i++) {
+      const cmd = commands.children.item(i);
+
+      if (cmd !== undefined) {
+        const attr = cmd.getAttribute("data");
+
+        if (attr === null) continue;
+
+        var cmds = this.state.commands;
+        var allcmds = this.state.allcommandnames;
+
+        cmds[cmds.length] = {
+          command: attr
+        };
+
+        allcmds[allcmds.length] = {
+          command: attr
+        };
+
+        this.setState({ commands: cmds, allcommandnames: allcmds });
+      }
+    }
+  }
+
+  handleSearch(input) {
+    const commands = document.getElementById("commands");
+
+    const fuse = new Fuse(this.state.commands, {
+      shouldSort: true,
+      threshold: 0.8,
+      location: 0,
+      distance: 100,
+      maxPatternLength: 32,
+      minMatchCharLength: 1,
+      keys: ["command"],
+      id: "command"
+    });
+    let results = fuse.search(input);
+
+    if (input.length === 0 || input === "") {
+      results = this.state.allcommandnames;
     }
 
-    render() {
-        let commands = cmds.map((val, index) => (<ModuleTree key={index} data={val} />));
-        return (
-            <div className="commands">
-                {commands}
-                <FuzzySearch
-                    list={this.state.commandNames}
-                    keys={['Name']}
-                    onSelect={undefined}
-                    placeholder="Find a command..."
-                    resultsTemplate={
-                        (props, state, styles, clickHandler) => {
-                            return state.results.map((val, i) => {
-                                const style = state.selectedIndex == i ? styles.selectedResultStyle : styles.resultsStyle;
-                                return (
-                                    <div
-                                        key={i}
-                                        style={style}
-                                    >
-                                        {val.Name} - {this.state.commandNameModules.filter(obj => { return obj.Command == val.Name; })[0].Module}
-                                    </div>
-                                );
-                            });
-                        }
-                    }
-                />
-            </div>
-        );
+    unHoist(true);
+
+    for (let i = 0; i < commands.childElementCount; i++) {
+      const cmd = commands.children.item(i);
+
+      if (cmd.id === results[0]) {
+        commands.insertBefore(cmd, commands.children.item(0));
+        if (!cmd.classList.contains("hoisted")) {
+          cmd.classList.add("hoisted");
+          cmd.classList.remove("unhoisted");
+          cmd.classList.remove("firstHoist");
+        }
+        if (cmd.classList.contains("unhoisted")) {
+          cmd.classList.remove("unhoisted");
+        }
+      }
     }
+
+    var notHosited = document.getElementsByClassName("unhoisted");
+
+    var firstUnHoisted = notHosited.item(0);
+
+    if (firstUnHoisted.classList.contains("unhoisted")) {
+      firstUnHoisted.classList.add("firstHoist");
+    }
+
+    if (input === "") {
+      unHoist(true);
+    }
+  }
+
+  render() {
+    let commands = cmds.map((val, index) =>
+      val.Commands.map((value, key) => <CommandNode key={key} data={value} />)
+    );
+
+    return (
+      <div id="content">
+        <div className="searchBox">
+          <input
+            placeholder={"Find " + getFlavour() + "..."}
+            type="text"
+            onChange={e => this.handleSearch(e.target.value)}
+          />
+        </div>
+        <div className="legend right">
+          <span>Legend:</span>
+          <div className="legend-box optional">Optional Parameter</div>
+          <div className="legend-box required">Required Parameter</div>
+        </div>
+        <div id="commands">{commands}</div>
+      </div>
+    );
+  }
 }

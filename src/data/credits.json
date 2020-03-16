@@ -1,121 +1,111 @@
 {
-	"Developers":
-	[
-		{
-			"Name": "exsersewo",
-			"Tagline": "I don't know what I am doing",
-			"Role": "Lead Developer",
-			"ImageURL": "https://cdn.discordapp.com/avatars/160256824099078144/a_1fc5723245edd0cf6cdffa672dd8162d.gif?size=128",
-			"Links":
-			[
-				{
-					"Platform":"Website",
-					"URL":"https://exsersewo.dev"
-				},
-				{
-					"Platform":"Github",
-					"URL":"https://social.exsersewo.dev/github"
-				},
-				{
-					"Platform":"Twitter",
-					"URL":"https://social.exsersewo.dev/twitter"
-				},
-				{
-					"Platform":"Twitch",
-					"URL":"https://social.exsersewo.dev/twitch"
-				}
-			]
-		}
-	],
-	"Staff":
-	[
-		{
-			"Name": "Lan",
-			"Tagline": "Anything is possible with enough spirit shards",
-			"Role": "Administrator",
-			"ImageURL":"https://cdn.discordapp.com/avatars/242040333309837327/5000d40022b29c93f68580abc88bc7e0.png?size=128",
-			"Links":
-			[
-				{
-					"Platform":"Youtube",
-					"URL":"https://www.youtube.com/channel/UCQjHem1aBBCNAlRPldElXaA"
-				}
-			]
-		},
-		{
-			"Name": "JustBeALlama",
-			"Tagline": "Masturbates to nekos",
-			"Role": "Moderator",
-			"ImageURL":"https://cdn.discordapp.com/avatars/138709870206648320/a_4d8a3e8f107dc17f8df0e54b3695f486.gif?size=128",
-			"Links":
-			[
-				{
-					"Platform":"Mixer",
-					"URL":"https://mixer.com/justbeallama"
-				},
-				{
-					"Platform":"Twitter",
-					"URL":"https://twitter.com/JustBeALlama"
-				}
-			]
-		},
-		{
-			"Name": "Lynchye",
-			"Tagline": "GGWP",
-			"Role": "Moderator",
-			"ImageURL":"https://cdn.discordapp.com/avatars/162971304008482816/b36c919b230359b14b5d139f9b3d7b59.png?size=128",
-			"Links":
-			[
-				{
-					"Platform":"Twitch",
-					"URL":"https://www.twitch.tv/lynchye"
-				},
-				{
-					"Platform":"Twitter",
-					"URL":"https://twitter.com/Lynchye"
-				}
-			]
-		}
-	],
-	"Artists":
-	[
-		{
-			"Name": "HeyOPC",
-			"Tagline": "Is this art gluten free?",
-			"ImageURL":"https://cdn.discordapp.com/avatars/272898228356120576/4df148d617ba7fbcb34e55def102e09e.png?size=128",
-			"Links":
-			[
-				{
-					"Platform":"Twitter",
-					"URL":"https://twitter.com/heyopc"
-				},
-				{
-					"Platform":"Youtube",
-					"URL":"https://www.youtube.com/heyopc"
-				}
-			]
-		},
-		{
-			"Name": "StaggerNight",
-			"Tagline": "Your local slav",
-			"ImageURL":"https://cdn.discordapp.com/avatars/184872522523738113/cf48d06334515278d7df634de4c54cec.png?size=128",
-			"Links":
-			[
-				{
-					"Platform":"Twitter",
-					"URL":"https://twitter.com/staggernight"
-				},
-				{
-					"Platform":"Newgrounds",
-					"URL":"https://staggernight.newgrounds.com/"
-				},
-				{
-					"Platform":"Instagram",
-					"URL":"https://www.instagram.com/staggernight/"
-				}
-			]
-		}
-	],
-	"Contributors":
-	[]
+  "Developers": [
+    {
+      "Name": "exsersewo",
+      "Tagline": "I don't know what I am doing",
+      "Role": "Lead Developer",
+      "ImageURL": "https://cdn.discordapp.com/avatars/160256824099078144/6624fd150a368af9b2bdb5366be34840.png?size=128",
+      "Links": [
+        {
+          "Platform": "Website",
+          "URL": "https://exsersewo.dev"
+        },
+        {
+          "Platform": "Github",
+          "URL": "https://social.exsersewo.dev/github"
+        },
+        {
+          "Platform": "Twitter",
+          "URL": "https://social.exsersewo.dev/twitter"
+        },
+        {
+          "Platform": "Twitch",
+          "URL": "https://social.exsersewo.dev/twitch"
+        }
+      ]
+    }
+  ],
+  "Staff": [
+    {
+      "Name": "Lan",
+      "Tagline": "Anything is possible with enough spirit shards",
+      "Role": "Administrator",
+      "ImageURL": "https://cdn.discordapp.com/avatars/242040333309837327/a_14c24778c09ef5609bfe15181934e334.png?size=128",
+      "Links": [
+        {
+          "Platform": "Youtube",
+          "URL": "https://www.youtube.com/channel/UCQjHem1aBBCNAlRPldElXaA"
+        }
+      ]
+    },
+    {
+      "Name": "JustBeALlama",
+      "Tagline": "Masturbates to nekos",
+      "Role": "Moderator",
+      "ImageURL": "https://cdn.discordapp.com/avatars/138709870206648320/a_75d118fe4cd0a6330164c19d97d7d4d7.png?size=128",
+      "Links": [
+        {
+          "Platform": "Mixer",
+          "URL": "https://mixer.com/justbeallama"
+        },
+        {
+          "Platform": "Twitter",
+          "URL": "https://twitter.com/JustBeALlama"
+        }
+      ]
+    },
+    {
+      "Name": "Lynchye",
+      "Tagline": "GGWP",
+      "Role": "Moderator",
+      "ImageURL": "https://cdn.discordapp.com/avatars/162971304008482816/b36c919b230359b14b5d139f9b3d7b59.png?size=128",
+      "Links": [
+        {
+          "Platform": "Twitch",
+          "URL": "https://www.twitch.tv/lynchye"
+        },
+        {
+          "Platform": "Twitter",
+          "URL": "https://twitter.com/Lynchye"
+        }
+      ]
+    }
+  ],
+  "Artists": [
+    {
+      "Name": "HeyOPC",
+      "Tagline": "Is this art gluten free?",
+      "ImageURL": "https://cdn.discordapp.com/avatars/272898228356120576/4df148d617ba7fbcb34e55def102e09e.png?size=128",
+      "Links": [
+        {
+          "Platform": "Twitter",
+          "URL": "https://twitter.com/heyopc"
+        },
+        {
+          "Platform": "Youtube",
+          "URL": "https://www.youtube.com/heyopc"
+        }
+      ]
+    },
+    {
+      "Name": "StaggerNight",
+      "Tagline": "Your local slav",
+      "ImageURL": "https://cdn.discordapp.com/avatars/184872522523738113/c8747e679ff4318f14f959c0e27cb031.png?size=128",
+      "Links": [
+        {
+          "Platform": "Twitter",
+          "URL": "https://twitter.com/staggernight"
+        },
+        {
+          "Platform": "Newgrounds",
+          "URL": "https://staggernight.newgrounds.com/"
+        },
+        {
+          "Platform": "Instagram",
+          "URL": "https://www.instagram.com/staggernight/"
+        }
+      ]
+    }
+  ],
+  "Contributors": []
 }
