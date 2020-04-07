@@ -7,7 +7,7 @@ export default class SideBar extends React.Component {
     super(props);
 
     this.state = {
-      visible: !isMobile || window.innerWidth > 767.98
+      visible: !isMobile || window.innerWidth > 767.98,
     };
 
     this.toggleMenu = this.toggleMenu.bind(this);
@@ -75,15 +75,6 @@ export default class SideBar extends React.Component {
               <a className="nav-link" href="//dashboard.skuldbot.uk">
                 <span className="fas fa-tachometer-alt"></span> Dashboard
               </a>
-            </li>
-            <li className="nav-item" onClick={this.hideMenu}>
-              <NavLink
-                activeClassName="active"
-                className="nav-link"
-                to="/leaderboard"
-              >
-                <span className="fas fa-list-ol"></span> Leaderboard
-              </NavLink>
             </li>
             <li className="nav-item" onClick={this.hideMenu}>
               <NavLink

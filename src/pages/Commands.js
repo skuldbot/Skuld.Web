@@ -81,7 +81,7 @@ export default class Commands extends React.Component {
 
     this.state = {
       commands: [],
-      allcommandnames: []
+      allcommandnames: [],
     };
   }
 
@@ -100,11 +100,11 @@ export default class Commands extends React.Component {
         var allcmds = this.state.allcommandnames;
 
         cmds[cmds.length] = {
-          command: attr
+          command: attr,
         };
 
         allcmds[allcmds.length] = {
-          command: attr
+          command: attr,
         };
 
         this.setState({ commands: cmds, allcommandnames: allcmds });
@@ -123,7 +123,7 @@ export default class Commands extends React.Component {
       maxPatternLength: 32,
       minMatchCharLength: 1,
       keys: ["command"],
-      id: "command"
+      id: "command",
     });
     let results = fuse.search(input);
 
@@ -173,7 +173,7 @@ export default class Commands extends React.Component {
           <input
             placeholder={"Find " + getFlavour() + "..."}
             type="text"
-            onChange={e => this.handleSearch(e.target.value)}
+            onChange={(e) => this.handleSearch(e.target.value)}
           />
         </div>
         <div className="legend right">

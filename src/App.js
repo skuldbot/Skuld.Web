@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Sidebar from "./components/SideBar";
 import Footer from "./components/Footer";
+import Leaderboard from "./pages/Leaderboard";
 
 function App() {
   return (
@@ -19,7 +20,14 @@ function App() {
             <Route path="/(|home)/" component={Home} />
             <Route path="/(commands)/" component={Commands} />
             <Route path="/(credits)/" component={Credit} />
-            <Route path="/(leaderboard)/" />
+            <Route
+              path="/(leaderboard)/:leaderboardType/:guildId"
+              component={Leaderboard}
+            />
+            <Route
+              path="/(leaderboard)/:leaderboardType/"
+              component={Leaderboard}
+            />
             <Route path="/(legal)/" component={Legal} />
           </Switch>
 

@@ -383,13 +383,24 @@ hr {
 
 /* LEADERBOARD */
 
-.leaderboard-box {
-  width: 50vw;
-  height: 180px;
+.leaderboard-box,
+.leaderboard-box.money {
+  width: 75%;
+  height: 200px;
   display: inline-block;
   position: relative;
   margin-bottom: 25px;
   background-color: #33333393;
+}
+
+.leaderboard-box.money {
+  height: 160px;
+}
+
+#leaderboard {
+  flex-grow: 0;
+  flex-direction: column;
+  width: 75%;
 }
 
 .leaderboard-box:nth-child(1) {
@@ -444,20 +455,6 @@ hr {
   z-index: 1;
 }
 
-.leaderboard-position {
-  width: 75px;
-  font-size: 5vh;
-  text-align: center;
-  height: 100%;
-  position: absolute;
-  right: 0;
-  margin-right: 0;
-}
-
-.leaderboard-position.money {
-  line-height: 175px;
-}
-
 .leaderboard-icon {
   display: block;
   position: absolute;
@@ -466,20 +463,19 @@ hr {
 }
 
 .leaderboard-avatar {
-  width: 96px;
-  height: 96px;
   border-radius: 5em;
   -moz-border-radius: 5em;
   -webkit-border-radius: 5em;
   display: block;
-  margin-left: 30px;
   position: absolute;
-  z-index: 2;
-  top: 20px;
+  margin-left: 1rem;
+  overflow: hidden;
 }
 
-.leaderboard-avatar.money {
-  margin-top: -140px;
+.leaderboard-avatar,
+img {
+  width: 128px;
+  height: 128px;
 }
 
 .leaderboard-meta {
@@ -492,19 +488,18 @@ hr {
   right: 0;
 }
 
-.leaderboard-username {
+.leaderboard-name {
   font-size: 40px;
   display: block;
-  width: auto;
+  width: 100%;
   max-width: 69%;
-  margin-left: 140px;
   height: 100%;
-  position: relative;
-  top: 25%;
+  line-height: 120px;
+  text-align: left;
+  margin-left: 180px;
 }
-
-.leaderboard-username.money {
-  line-height: 170px;
+.leaderboard-box.money .leaderboard-name {
+  line-height: 8rem;
 }
 
 .leaderboard-bottom {
@@ -512,6 +507,8 @@ hr {
   position: absolute;
   bottom: 0;
   width: 100%;
+  left: 0;
+  height: 40px;
 }
 
 .leaderboard-xp-bar {
@@ -536,18 +533,24 @@ hr {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#438285', endColorstr='#009688',GradientType=1 );
 }
 
-/*.leaderboard-xp-bar {
-    position: relative;
-    z-index: 1;
-    margin-top: -40px;
-    height: 40px;
-}*/
-
 .leaderboard-xp-current,
 .leaderboard-xp-next,
-.leaderboard-xp-total,
 .leaderboard-money {
   line-height: 40px;
+}
+
+.leaderboard-xp-next,
+.leaderboard-money {
+  right: 5px;
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 0;
+}
+.leaderboard-xp-next,
+.leaderboard-money,
+.leaderboard-xp-current {
+  font-size: 1.5rem;
 }
 
 .leaderboard-xp-current {
@@ -558,38 +561,33 @@ hr {
   margin-bottom: 0;
 }
 
-.leaderboard-xp-next,
-.leaderboard-money {
-  right: 5px;
-  text-align: right;
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 0;
-}
-
-.leaderboard-xp-total {
-  right: 5px;
-  text-align: right;
-  position: absolute;
-  bottom: 30px;
-  margin-bottom: 0;
-}
-
 .leaderboard-xp-level {
-  margin: 0;
+  margin-top: -4.5rem;
+  padding: 5px;
   text-align: right;
   display: block;
-  position: absolute;
-  left: 5px;
-  bottom: 40px;
+  height: 10rem;
+  line-height: 1;
+  font-size: 1.5rem;
 }
 
 .leaderboard-fillbar {
+  width: 100%;
   height: 100%;
   background-color: teal;
   display: block;
   position: absolute;
   bottom: 0;
+}
+
+.leaderboard-position {
+  position: absolute;
+  width: min-content;
+  right: 5px;
+  top: -5px;
+  font-size: 2rem;
+  text-align: center;
+  height: 12.5rem;
 }
 
 footer {
@@ -721,7 +719,6 @@ footer ul {
   flex: 4 !important;
   margin-top: 10px;
   display: flex;
-  flex-direction: column;
 }
 .command-parameters .param-tooltip {
   min-width: 75px;
@@ -780,6 +777,7 @@ footer ul {
   display: none;
 }
 
+/* Phones */
 @media (max-width: 767.98px) {
   .sidebar {
     top: 0;
@@ -934,6 +932,40 @@ footer ul {
   .command-parameters .param-tooltip {
     flex: 1 0 50%;
     margin-top: 15px;
+  }
+
+  #leaderboard {
+    width: 90vw;
+    margin-left: 1rem;
+  }
+
+  .leaderboard-box {
+    height: 150px;
+    width: 100%;
+  }
+
+  .leaderboard-name {
+    line-height: 80px;
+    font-size: 20px;
+    margin-left: 7rem;
+  }
+
+  .leaderboard-avatar,
+  img {
+    width: 86px;
+    height: 86px;
+  }
+  .leaderboard-avatar {
+    margin-left: 0.25rem;
+  }
+
+  .leaderboard-box.money {
+    height: 125px;
+    width: 100%;
+  }
+
+  .leaderboard-box.money .leaderboard-name {
+    line-height: 5rem;
   }
 }
 
