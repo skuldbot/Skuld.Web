@@ -72,7 +72,7 @@ export default class SideBar extends React.Component {
               </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="//dashboard.skuldbot.uk">
+              <a className="nav-link disabled" href="//dashboard.skuldbot.uk">
                 <span className="fas fa-tachometer-alt"></span> Dashboard
               </a>
             </li>

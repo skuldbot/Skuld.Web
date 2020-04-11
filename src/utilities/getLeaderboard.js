@@ -20,9 +20,6 @@ export default function GetLeaderboard(props) {
       method: "GET",
       url: URL,
       cancelToken: new axios.CancelToken((c) => (cancel = c)),
-      headers: {
-        Authorization: `Bearer ${process.env.REACT_APP_SKULDAPI_TOKEN}`,
-      },
     })
       .then((res) => {
         if (res.data.success) {
