@@ -6,7 +6,11 @@
 trigger:
 - master
 
-pool: 'Default'
+pool: 
+    name: 'Default'
+    demands:
+    - nodejs
+    - web
 
 resources:
   repositories:
