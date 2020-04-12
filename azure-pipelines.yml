@@ -6,9 +6,14 @@
 trigger:
 - master
 
-pool:
-  vmImage: 'ubuntu-latest'
+pool: 'Default'
 
+resources:
+  repositories:
+  - repository: self
+    checkoutOptions:
+      submodules: true
+      
 steps:
 - task: NodeTool@0
   inputs:
