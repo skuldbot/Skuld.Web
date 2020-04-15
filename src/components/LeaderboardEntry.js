@@ -8,7 +8,9 @@ function formatNumber(num) {
 }
 
 function getXPAmnt(level, growth) {
-  return Math.round(Math.max(0, min(1500000, pow(level + 1, growth) * 50)));
+  return Math.round(
+    Math.max(0, Math.min(1500000, Math.pow(level + 1, growth) * 50))
+  );
 }
 
 export default class LeaderboardEntry extends React.Component {
