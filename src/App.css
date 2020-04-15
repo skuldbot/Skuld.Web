@@ -391,7 +391,7 @@ hr {
 .leaderboard-box,
 .leaderboard-box.money {
   width: 75%;
-  height: 200px;
+  min-height: 200px;
   display: inline-block;
   position: relative;
   margin-bottom: 25px;
@@ -399,7 +399,7 @@ hr {
 }
 
 .leaderboard-box.money {
-  height: 160px;
+  min-height: 160px;
 }
 
 #leaderboard {
@@ -502,6 +502,7 @@ img {
   line-height: 120px;
   text-align: left;
   margin-left: 180px;
+  height: min-content;
 }
 .leaderboard-box.money .leaderboard-name {
   line-height: 8rem;
@@ -593,6 +594,12 @@ img {
   font-size: 2rem;
   text-align: center;
   height: 12.5rem;
+}
+
+.compact-toggle {
+  display: block;
+  right: 25px;
+  position: fixed;
 }
 
 footer {
@@ -782,8 +789,48 @@ footer ul {
   display: none;
 }
 
+#leaderboard.compact {
+  flex-grow: 0;
+  flex-direction: column;
+  width: 75%;
+}
+
+.leaderboard-box.compact {
+  width: 70%;
+  min-height: 110px;
+  height: 110px;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 12.5px;
+  overflow: visible;
+}
+
+.leaderboard-avatar.compact,
+.leaderboard-avatar.compact img {
+  width: 96px;
+  height: 96px;
+}
+.leaderboard-avatar.compact {
+  left: -125px;
+  top: 7.5px;
+}
+
+.leaderboard-name.compact {
+  font-size: 40px;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  line-height: 35px;
+  margin-left: 0;
+  text-align: left;
+}
+
 /* Phones */
 @media (max-width: 767.98px) {
+  .compact-toggle {
+    display: none;
+  }
   .sidebar {
     top: 0;
     width: 100vw;
