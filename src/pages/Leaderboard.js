@@ -75,46 +75,40 @@ export default function Leaderboard(props) {
     setCanLoadMore(false);
   }, [props, canLoadMore, setURL, setCanLoadMore, nextOffset]);
 
-  let toggleCompact = function () {
-    var toggle = document.getElementById("compact-toggle");
+  let toggleCozy = function () {
+    var toggle = document.getElementById("cozy-toggle");
     setCompact(toggle.checked);
     if (toggle.checked) {
       var box = document.getElementsByClassName("leaderboard-box");
       for (var item in box.length) {
-        if (
-          box[item] !== undefined &&
-          !box[item].classList.contains("compact")
-        ) {
-          box[item].classList.add("compact");
+        if (box[item] !== undefined && !box[item].classList.contains("cozy")) {
+          box[item].classList.add("cozy");
         }
       }
       var avs = document.getElementsByClassName("leaderboard-avatar");
-      for (var item in avs.length) {
-        if (
-          avs[item] !== undefined &&
-          !avs[item].classList.contains("compact")
-        ) {
-          avs[item].classList.add("compact");
+      for (var itm in avs.length) {
+        if (avs[itm] !== undefined && !avs[itm].classList.contains("cozy")) {
+          avs[itm].classList.add("cozy");
         }
       }
       var names = document.getElementsByClassName("leaderboard-name");
-      for (var item in names.length) {
+      for (var itmm in names.length) {
         if (
-          names[item] !== undefined &&
-          !names[item].classList.contains("compact")
+          names[itmm] !== undefined &&
+          !names[itmm].classList.contains("cozy")
         ) {
-          names[item].classList.add("compact");
+          names[itmm].classList.add("cozy");
         }
       }
     } else {
-      var compacts = document.getElementsByClassName("compact");
+      var compacts = document.getElementsByClassName("cozy");
 
-      for (var item in compacts.length) {
+      for (var itmmm in compacts.length) {
         if (
-          compacts[item] !== undefined &&
-          compacts[item].classList.contains("compact")
+          compacts[itmmm] !== undefined &&
+          compacts[itmmm].classList.contains("cozy")
         ) {
-          compacts[item].classList.remove("compact");
+          compacts[itmmm].classList.remove("cozy");
         }
       }
     }
@@ -122,13 +116,13 @@ export default function Leaderboard(props) {
 
   return (
     <div id="content">
-      <div className="compact-toggle">
-        <div>Compact</div>
+      <div className="cozy-toggle">
+        <div>Cozy</div>
         <Toggle
-          id="compact-toggle"
+          id="cozy-toggle"
           defaultChecked={false}
-          onClick={toggleCompact}
-          name="Compact"
+          onClick={toggleCozy}
+          name="Cozy"
         />
       </div>
       <div id="leaderboard" className="flexList">
@@ -141,7 +135,7 @@ export default function Leaderboard(props) {
                 data={userentry}
                 position={key + 1}
                 isMoney={isMoney}
-                isCompact={compact}
+                isCompact={!compact}
               />
             );
           } else {
@@ -151,7 +145,7 @@ export default function Leaderboard(props) {
                 data={userentry}
                 position={key + 1}
                 isMoney={isMoney}
-                isCompact={compact}
+                isCompact={!compact}
               />
             );
           }
