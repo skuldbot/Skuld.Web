@@ -33,13 +33,6 @@ export default class LeaderboardEntry extends React.Component {
 
     var currXp = this.props.data.TotalXP - xpCurrentLevel;
 
-    console.log(
-      "userId: " +
-        this.props.data.Id +
-        " this.props.data.TotalXP: " +
-        this.props.data.TotalXP
-    );
-
     return (
       <li
         className={
